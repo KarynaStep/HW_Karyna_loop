@@ -20,7 +20,6 @@ const valueСorrect = "This number is a multiple of 7";
 const valueIncorrect = "Try again. ";  
 
 for (let i = 0; i < 5; i++) {
-  
   const numberAttempts = "Remaining tries " + (5 - (1 + i));
 
   const valueUser = prompt("enter a multiple of 7", 7);
