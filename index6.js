@@ -1,11 +1,10 @@
 // Написати цикл, який просить людину ввести число від 1 до 50 кратне 7.
 // Запитувати до тих пір, доки людина не введе правильно.
-
+// const valueMultiplicity = 7;
+// const valueСorrect = "This number is a multiple of 7";
+// const valueIncorrect = "Try again";
+  
 while (true) {
-  const valueMultiplicity = 7;
-  const valueСorrect = "This number is a multiple of 7";
-  const valueIncorrect = "Try again";
-
   const valueUser = prompt("enter a multiple of 7", 7);
 
   if (valueUser % valueMultiplicity === 0 && valueUser > 0 && valueUser < 50) {
@@ -16,11 +15,12 @@ while (true) {
 }
 
 // * обмежити кількість спроб до 5
+const valueMultiplicity = 7;
+const valueСorrect = "This number is a multiple of 7";
+const valueIncorrect = "Try again. ";  
 
 for (let i = 0; i < 5; i++) {
-  const valueMultiplicity = 7;
-  const valueСorrect = "This number is a multiple of 7";
-  const valueIncorrect = "Try again. ";
+  
   const numberAttempts = "Remaining tries " + (5 - (1 + i));
 
   const valueUser = prompt("enter a multiple of 7", 7);
@@ -33,12 +33,12 @@ for (let i = 0; i < 5; i++) {
 }
 
 // *** зробити це за допомогою функції, щоб цикл був всередині функції
-const checkMultiplicity = function () {
+const checkMultiplicity = function (
+  valueMultiplicity,
+  valueСorrect,
+  valueIncorrect
+) {
   while (true) {
-    const valueMultiplicity = 7;
-    const valueСorrect = "This number is a multiple of 7";
-    const valueIncorrect = "Try again";
-
     const valueUser = prompt("enter a multiple of 7", 7);
 
     if (
@@ -46,10 +46,11 @@ const checkMultiplicity = function () {
       valueUser > 0 &&
       valueUser < 50
     ) {
-      return alert(valueСorrect);
+      alert(valueСorrect);
+      return;
     }
     alert(valueIncorrect);
   }
 };
 
-checkMultiplicity();
+checkMultiplicity(7, "This number is a multiple of 7", "Try again");
